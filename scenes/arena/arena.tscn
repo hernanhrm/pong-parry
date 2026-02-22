@@ -85,6 +85,12 @@ offset_right = 1760.0
 offset_bottom = 850.0
 script = ExtResource("3_5tue2")
 
+[node name="LeftPaddleGlow" type="ColorRect" parent="Court" unique_id=2098354083]
+custom_minimum_size = Vector2(32, 132)
+offset_right = 32.0
+offset_bottom = 132.0
+color = Color(0, 0.8235294, 1, 0.14901961)
+
 [node name="LeftPaddle" type="ColorRect" parent="Court" unique_id=477866402]
 custom_minimum_size = Vector2(16, 120)
 offset_left = 40.0
@@ -92,6 +98,12 @@ offset_top = 340.0
 offset_right = 56.0
 offset_bottom = 460.0
 color = Color(0, 0.8235294, 1, 1)
+
+[node name="RightPaddleGlow" type="ColorRect" parent="Court" unique_id=510715306]
+custom_minimum_size = Vector2(32, 132)
+offset_right = 32.0
+offset_bottom = 132.0
+color = Color(1, 1, 1, 0.14901961)
 
 [node name="RightPaddle" type="ColorRect" parent="Court" unique_id=894133306]
 custom_minimum_size = Vector2(16, 120)
@@ -139,7 +151,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_asdgj")
 theme_override_font_sizes/font_size = 48
-text = "01"
+text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -161,7 +173,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_asdgj")
 theme_override_font_sizes/font_size = 40
-text = "2:45"
+text = "3:00"
 horizontal_alignment = 1
 
 [node name="P2ScoreBox" type="PanelContainer" parent="HUDLayer/HUD/TopBar" unique_id=646846420]
