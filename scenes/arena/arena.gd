@@ -16,14 +16,23 @@ extends Node2D
 
 # HUD elements (note: path goes through HUDLayer → HUD)
 @onready var p1_score_label: Label = $HUDLayer/HUD/TopBar/P1ScoreBox/P1ScoreLabel
-@onready var p2_score_label: Label = $HUDLayer/HUD/TopBar/P2ScoreBox/P2ScoreLabel
 @onready var timer_value: Label = $HUDLayer/HUD/TopBar/TimerContainer/TimerValue
+@onready var p2_score_label: Label = $HUDLayer/HUD/TopBar/P2ScoreBox/P2ScoreLabel
+
+@onready var p1_progress_bar = $HUDLayer/HUD/MarginContainer/P1HUD/P1OverdriveBar
+@onready var p2_progress_bar = $HUDLayer/HUD/MarginContainer/P2HUD/P2OverdriveBar
+
 
 # Game state
 var paddle_speed: float = 600.0
 var ball_velocity: Vector2 = Vector2(400, 250)
+
 var p1_score: int = 0
+var p1_streak: int = 0
+
 var p2_score: int = 0
+var p2_streak: int = 0
+
 var match_time: float = 180.0  # 3 minutes in seconds
 var is_timer_finished: bool = false
 
@@ -92,9 +101,18 @@ func _score(player: int) -> void:
 	if player == 1:
 		p1_score += 1
 		p1_score_label.text = "%02d" % p1_score
+
+		p2_streak = 0
+		p1_streak += 1
+		p1_progress_bar.value +=  p1_streak * 10
+
 	else:
 		p2_score += 1
 		p2_score_label.text = "%02d" % p2_score
+
+		p2_streak += 1
+		p1_streak = 0
+		p2_progress_bar.value += p2_streak * 10
 	_reset_ball()
 
 func _reset_ball() -> void:

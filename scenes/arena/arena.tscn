@@ -223,7 +223,6 @@ custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_ii07k")
 theme_override_styles/fill = SubResource("StyleBoxFlat_u52cf")
-value = 65.0
 show_percentage = false
 
 [node name="P1Abilities" type="HBoxContainer" parent="HUDLayer/HUD/MarginContainer/P1HUD" unique_id=542929527]
@@ -295,7 +294,6 @@ custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_ii07k")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2ml6w")
-value = 65.0
 show_percentage = false
 
 [node name="P1Abilities" type="HBoxContainer" parent="HUDLayer/HUD/MarginContainer/P2HUD" unique_id=1229144269]
