@@ -64,8 +64,8 @@ func _move_ball(delta: float) -> void:
 
 	# Bounce off top and bottom walls
 	if ball.position.y <= 0 or ball.position.y + ball.size.y >= court_border.size.y:
-		ball_velocity.y = -ball_velocity.y
 		hit_wall_sound.play()
+		ball_velocity.y = -ball_velocity.y
 
 	# Check paddle collisions
 	var ball_rect := Rect2(ball.position, ball.size)
@@ -73,14 +73,14 @@ func _move_ball(delta: float) -> void:
 	var right_rect := Rect2(right_paddle.position, right_paddle.size)
 
 	if ball_rect.intersects(left_rect) and ball_velocity.x < 0:
+		hit_sound_paddle.play()
 		ball_velocity.x = -ball_velocity.x
 		ball_velocity *= 1.1  # Speed up slightly each hit
-		hit_sound_paddle.play()
 
 	if ball_rect.intersects(right_rect) and ball_velocity.x > 0:
+		hit_sound_paddle.play()
 		ball_velocity.x = -ball_velocity.x
 		ball_velocity *= 1.1
-		hit_sound_paddle.play()
 
 	# Scoring — ball goes past left or right edge
 	if ball.position.x + ball.size.x < 0:

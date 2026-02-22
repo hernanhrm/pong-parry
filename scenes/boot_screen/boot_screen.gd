@@ -8,7 +8,7 @@ func _ready() -> void:
 	boot_sound.volume_db = -30.0
 	boot_sound.play()
 	var vol_tween := create_tween()
-	vol_tween.tween_property(boot_sound, "volume_db", 0.0, 1.5)
+	vol_tween.tween_property(boot_sound, "volume_db", 25.0, 1.5)
 	
 	_start_blink()
 	await get_tree().create_timer(3.0).timeout
