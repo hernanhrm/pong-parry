@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="pong-parry"
-run/main_scene="uid://c6wyaoyc4o16q"
+run/main_scene="uid://bcnrjhgwnurc5"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Transition="*uid://c3pvu48h1a1ew"
 
 [display]
 

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bcnrjhgwnurc5"]
+
+[ext_resource type="Script" uid="uid://dwhvtdp14tolt" path="res://scenes/boot_screen/boot_screen.gd" id="1_ehx6v"]
+[ext_resource type="Shader" uid="uid://byjlsq36n8ut8" path="res://scenes/title_screen/title_screen.gdshader" id="1_te6m6"]
+[ext_resource type="FontFile" uid="uid://bj676rc6eexjs" path="res://assets/fonts/montserrat/Montserrat-BlackItalic.ttf" id="2_r14hs"]
+[ext_resource type="Texture2D" uid="uid://dc002nxu53cb2" path="res://assets/icons/hammer.svg" id="2_tuir3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r14hs"]
+shader = ExtResource("1_te6m6")
+shader_parameter/bg_color = Color(0.1, 0.137, 0.196, 1)
+shader_parameter/line_color = Color(0.11764706, 0.18039216, 0.24313726, 1)
+shader_parameter/cell_size = 40.00000095
+shader_parameter/line_thickness = 1.0
+shader_parameter/scroll_speed = 0.0
+
+[node name="BootScreen" type="Control" unique_id=999655460]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ehx6v")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=637226413]
+material = SubResource("ShaderMaterial_r14hs")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101960786, 0.13725491, 0.19607843, 1)
+
+[node name="Logo" type="HBoxContainer" parent="." unique_id=1544055452]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -90.5
+offset_right = 350.0
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LogoImageContainer" type="HBoxContainer" parent="Logo" unique_id=1817201637]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Logo" type="TextureRect" parent="Logo/LogoImageContainer" unique_id=2140657846]
+layout_mode = 2
+texture = ExtResource("2_tuir3")
+
+[node name="LogoContainer" type="HBoxContainer" parent="Logo" unique_id=1778559174]
+layout_mode = 2
+
+[node name="ForgeLabel" type="Label" parent="Logo/LogoContainer" unique_id=316688412]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r14hs")
+theme_override_font_sizes/font_size = 72
+text = "FORGE
+"
+
+[node name="StudiosLabel" type="Label" parent="Logo/LogoContainer" unique_id=1768389139]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7372549, 0.89411765, 1)
+theme_override_fonts/font = ExtResource("2_r14hs")
+theme_override_font_sizes/font_size = 72
+text = "STUDIOS
+"

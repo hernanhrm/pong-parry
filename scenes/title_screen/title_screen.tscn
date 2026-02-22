@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c6wyaoyc4o16q"]
 
-[ext_resource type="Script" uid="uid://be5kxms8dx77u" path="res://scripts/deco_circle.gd" id="1_05l2w"]
-[ext_resource type="Script" uid="uid://d0027l5057735" path="res://scripts/title_screen.gd" id="1_hafda"]
+[ext_resource type="Script" uid="uid://be5kxms8dx77u" path="res://scenes/title_screen/deco_circle.gd" id="1_05l2w"]
+[ext_resource type="Script" uid="uid://d0027l5057735" path="res://scenes/title_screen/title_screen.gd" id="1_hafda"]
 [ext_resource type="FontFile" uid="uid://bj676rc6eexjs" path="res://assets/fonts/montserrat/Montserrat-BlackItalic.ttf" id="1_v6p8y"]
 [ext_resource type="Texture2D" uid="uid://470kitwtneke" path="res://assets/icons/game-controller.svg" id="2_ak2if"]
-[ext_resource type="Shader" uid="uid://byjlsq36n8ut8" path="res://title_screen.gdshader" id="2_tpml5"]
+[ext_resource type="Shader" uid="uid://byjlsq36n8ut8" path="res://scenes/title_screen/title_screen.gdshader" id="2_tpml5"]
 [ext_resource type="FontFile" uid="uid://b5nvmwnh5krgk" path="res://assets/fonts/montserrat/Montserrat-Black.ttf" id="3_ig5kc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqemp"]

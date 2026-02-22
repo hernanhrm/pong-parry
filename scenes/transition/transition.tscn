@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cnpiiiwise5p0"]
+
+[ext_resource type="Script" uid="uid://by2300owcr38n" path="res://scenes/transition/transition.gd" id="1_wlg0m"]
+
+[node name="SlideTransition" type="CanvasLayer" unique_id=1910713241]
+script = ExtResource("1_wlg0m")
+
+[node name="Cover" type="ColorRect" parent="." unique_id=1728966209]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.7372549, 0.89411765, 1)
