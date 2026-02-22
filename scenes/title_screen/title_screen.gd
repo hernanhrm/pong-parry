@@ -1,11 +1,13 @@
 extends Control
 
 @onready var start_button:Button = $StartButton
+@onready var music: AudioStreamPlayer = $Music
 
 func _ready() -> void:
 	start_button.pressed.connect(_on_start_pressed)
-	# Make the button text blink
 	_start_blink()
+	var vol_tween := create_tween()
+	vol_tween.tween_property(music, "volume_db", 0.0, 4)
 
 func _on_start_pressed() -> void:
 	# TODO: Change to your game scene later

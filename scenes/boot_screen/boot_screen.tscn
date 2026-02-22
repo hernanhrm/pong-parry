@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://b04tdhku7b7yj" path="res://assets/shaders/grid_background.gdshader" id="1_te6m6"]
 [ext_resource type="FontFile" uid="uid://bj676rc6eexjs" path="res://assets/fonts/montserrat/Montserrat-BlackItalic.ttf" id="2_r14hs"]
 [ext_resource type="Texture2D" uid="uid://dc002nxu53cb2" path="res://assets/icons/hammer.svg" id="2_tuir3"]
-[ext_resource type="AudioStream" uid="uid://b0onqaij7cwhg" path="res://assets/sounds/boot_ping_pong.wav" id="5_ndd6f"]
+[ext_resource type="AudioStream" uid="uid://bjrjxo45yra0b" path="res://assets/sounds/boot.mp3" id="5_ndd6f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r14hs"]
 shader = ExtResource("1_te6m6")
