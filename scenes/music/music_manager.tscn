@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://iwvvislvvr51"]
+
+[ext_resource type="AudioStream" uid="uid://b31v1ctatg2vl" path="res://assets/sounds/title_screen_quantum_surge.mp3" id="1_inljn"]
+[ext_resource type="Script" uid="uid://6jlogbeiaght" path="res://scenes/music/bg_music.gd" id="2_6ac5e"]
+
+[node name="MusicManager" type="Node" unique_id=625443959]
+script = ExtResource("2_6ac5e")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=790564675]
+stream = ExtResource("1_inljn")
+volume_db = -50.0

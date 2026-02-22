@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dnjt4glopu567"]
 
 [ext_resource type="Shader" uid="uid://b04tdhku7b7yj" path="res://assets/shaders/grid_background.gdshader" id="1_1qjuf"]
+[ext_resource type="Script" uid="uid://btef3ixlsmpm" path="res://scenes/arena/arena.gd" id="1_u52cf"]
 [ext_resource type="Script" uid="uid://bdk6bijskjch" path="res://scenes/arena/court_border.gd" id="2_8trdl"]
 [ext_resource type="Script" uid="uid://bs8kd6clft1r4" path="res://scenes/arena/court_lines.gd" id="3_5tue2"]
 [ext_resource type="Script" uid="uid://bjs3w37jylue7" path="res://scenes/arena/ball.gd" id="4_aj7ud"]
@@ -54,6 +55,7 @@ corner_radius_bottom_left = 4
 bg_color = Color(1, 1, 1, 1)
 
 [node name="Arena" type="Node2D" unique_id=1567707666]
+script = ExtResource("1_u52cf")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1675532086]
 material = SubResource("ShaderMaterial_8trdl")

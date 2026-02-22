@@ -4,17 +4,18 @@
 [ext_resource type="Script" uid="uid://d0027l5057735" path="res://scenes/title_screen/title_screen.gd" id="1_hafda"]
 [ext_resource type="FontFile" uid="uid://bj676rc6eexjs" path="res://assets/fonts/montserrat/Montserrat-BlackItalic.ttf" id="1_v6p8y"]
 [ext_resource type="Texture2D" uid="uid://470kitwtneke" path="res://assets/icons/game-controller.svg" id="2_ak2if"]
-[ext_resource type="Shader" uid="uid://byjlsq36n8ut8" path="res://assets/shaders/grid_background.gdshader" id="2_tpml5"]
+[ext_resource type="Shader" uid="uid://b04tdhku7b7yj" path="res://assets/shaders/grid_background.gdshader" id="2_tpml5"]
 [ext_resource type="FontFile" uid="uid://b5nvmwnh5krgk" path="res://assets/fonts/montserrat/Montserrat-Black.ttf" id="3_ig5kc"]
-[ext_resource type="AudioStream" path="res://assets/sounds/title_screen_quantum_surge.mp3" id="4_music"]
+[ext_resource type="AudioStream" uid="uid://b31v1ctatg2vl" path="res://assets/sounds/title_screen_quantum_surge.mp3" id="4_music"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqemp"]
 shader = ExtResource("2_tpml5")
 shader_parameter/bg_color = Color(0.1, 0.137, 0.196, 1)
 shader_parameter/line_color = Color(0.11764706, 0.18039216, 0.24313726, 1)
 shader_parameter/cell_size = 40.00000095
-shader_parameter/line_thickness = 1.2080000336299999
+shader_parameter/line_thickness = 1.20800003363
 shader_parameter/scroll_speed = 0.0
+shader_parameter/vignette_intensity = 1.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6p8y"]
 content_margin_left = 40.0
@@ -180,7 +181,7 @@ text = "v0.1.0
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=976000707]
 stream = ExtResource("4_music")
 volume_db = -50.0
 autoplay = true

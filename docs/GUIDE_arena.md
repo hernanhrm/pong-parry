@@ -93,9 +93,7 @@ Arena (Node2D)                                — game world root
 
 1. Select `Arena` → Add Child → `ColorRect` → Create
 2. Rename to `Background`
-3. Since the parent is a `Node2D` (not a `Control`), anchor presets won't work. Set the size manually:
-   - **Position**: `x: 0, y: 0`
-   - **Size**: `x: 1920, y: 1080`
+3. Set **Anchor Preset**: **Full Rect** (Layout → Full Rect)
 4. Set **Color**: `#0A0E14` (very dark blue-black)
 
 ### Step 1.2 — Apply the Grid Shader (Optional)
