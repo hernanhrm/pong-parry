@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://c6wyaoyc4o16q"]
+
+[ext_resource type="Script" uid="uid://be5kxms8dx77u" path="res://scripts/deco_circle.gd" id="1_05l2w"]
+[ext_resource type="Script" uid="uid://d0027l5057735" path="res://scripts/title_screen.gd" id="1_hafda"]
+[ext_resource type="FontFile" uid="uid://bj676rc6eexjs" path="res://assets/fonts/montserrat/Montserrat-BlackItalic.ttf" id="1_v6p8y"]
+[ext_resource type="Texture2D" uid="uid://470kitwtneke" path="res://assets/icons/game-controller.svg" id="2_ak2if"]
+[ext_resource type="Shader" uid="uid://byjlsq36n8ut8" path="res://title_screen.gdshader" id="2_tpml5"]
+[ext_resource type="FontFile" uid="uid://b5nvmwnh5krgk" path="res://assets/fonts/montserrat/Montserrat-Black.ttf" id="3_ig5kc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqemp"]
+shader = ExtResource("2_tpml5")
+shader_parameter/bg_color = Color(0.1, 0.137, 0.196, 1)
+shader_parameter/line_color = Color(0.11764706, 0.18039216, 0.24313726, 1)
+shader_parameter/cell_size = 40.00000095
+shader_parameter/line_thickness = 1.2080000336299999
+shader_parameter/scroll_speed = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6p8y"]
+content_margin_left = 40.0
+content_margin_top = 16.0
+content_margin_right = 40.0
+content_margin_bottom = 16.0
+bg_color = Color(0.8784314, 0.8784314, 0.8784314, 1)
+skew = Vector2(0.15, 0)
+
+[node name="TitleScreen" type="Control" unique_id=2013092292]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hafda")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1229508168]
+material = SubResource("ShaderMaterial_jqemp")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101960786, 0.13725491, 0.19607843, 1)
+
+[node name="DecoCircle" type="Control" parent="." unique_id=1367079381]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05l2w")
+
+[node name="TitleContainer" type="VBoxContainer" parent="." unique_id=1031135717]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = -23.0
+offset_right = -78.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -80
+alignment = 1
+
+[node name="PongLabel" type="Label" parent="TitleContainer" unique_id=1269992440]
+layout_mode = 2
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("1_v6p8y")
+theme_override_font_sizes/font_size = 180
+text = "PONG"
+horizontal_alignment = 1
+
+[node name="ParryLabel" type="Label" parent="TitleContainer" unique_id=613224150]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.70980394, 0.8862745, 1)
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("1_v6p8y")
+theme_override_font_sizes/font_size = 180
+text = "    PARRY"
+horizontal_alignment = 1
+
+[node name="GhostText" type="Label" parent="." unique_id=1329697820]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -203.0
+offset_right = 442.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0.70980394, 0.8862745, 0.2)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_v6p8y")
+theme_override_font_sizes/font_size = 200
+text = "PARRY"
+
+[node name="StartButton" type="Button" parent="." unique_id=716394581]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.5
+offset_top = -279.0
+offset_right = 126.5
+offset_bottom = -221.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 18
+theme_override_fonts/font = ExtResource("1_v6p8y")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6p8y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v6p8y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v6p8y")
+text = "PRESS ANY KEY"
+icon = ExtResource("2_ak2if")
+
+[node name="FooterContainer" type="HBoxContainer" parent="." unique_id=867403097]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="FooterContainer" unique_id=574426547]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="BottomLeft" type="HBoxContainer" parent="FooterContainer/MarginContainer" unique_id=1556158778]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="CyanBar" type="ColorRect" parent="FooterContainer/MarginContainer/BottomLeft" unique_id=463868876]
+custom_minimum_size = Vector2(60, 8)
+layout_mode = 2
+size_flags_vertical = 0
+color = Color(0, 0.70980394, 0.8862745, 1)
+
+[node name="WhiteSquare" type="ColorRect" parent="FooterContainer/MarginContainer/BottomLeft" unique_id=1976760102]
+custom_minimum_size = Vector2(24, 8)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VersionLabel" type="Label" parent="FooterContainer/MarginContainer" unique_id=605419754]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.30588236, 0.3764706, 0.42745098, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_ig5kc")
+theme_override_font_sizes/font_size = 18
+text = "v0.1.0
+"
+horizontal_alignment = 2
+vertical_alignment = 1

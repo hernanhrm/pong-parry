@@ -1,0 +1,364 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "eF2JL",
+      "x": 0,
+      "y": 0,
+      "name": "Screen 1 — Boot Splash",
+      "width": 1920,
+      "height": 1080,
+      "fill": "#0073CF",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "tI6NY",
+          "x": 0,
+          "y": 0,
+          "name": "Court Geometry",
+          "width": 1920,
+          "height": 1080,
+          "fill": "transparent",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "nMnIg",
+              "x": 120,
+              "y": 80,
+              "name": "Top Border",
+              "width": 1680,
+              "height": 3,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "kN8Sc",
+              "x": 120,
+              "y": 997,
+              "name": "Bottom Border",
+              "width": 1680,
+              "height": 3,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "6nXFt",
+              "x": 120,
+              "y": 80,
+              "name": "Left Border",
+              "width": 3,
+              "height": 920,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "oGC9l",
+              "x": 1797,
+              "y": 80,
+              "name": "Right Border",
+              "width": 3,
+              "height": 920,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "PPjgj",
+              "x": 958,
+              "y": 107,
+              "name": "Net Dash 1",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "cyjXa",
+              "x": 958,
+              "y": 260,
+              "name": "Net Dash 2",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "KjjNn",
+              "x": 958,
+              "y": 413,
+              "name": "Net Dash 3",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "LomlR",
+              "x": 958,
+              "y": 566,
+              "name": "Net Dash 4",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "Cpsi6",
+              "x": 958,
+              "y": 719,
+              "name": "Net Dash 5",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "81m2u",
+              "x": 958,
+              "y": 872,
+              "name": "Net Dash 6",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "saQRi",
+          "x": 0,
+          "y": 0,
+          "name": "Center Wrapper",
+          "width": 1920,
+          "height": 1080,
+          "fill": "transparent",
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "dVEOM",
+              "name": "Wordmark",
+              "fill": "#FFFFFF",
+              "content": "PONG PARRY",
+              "textAlign": "center",
+              "fontFamily": "Outfit",
+              "fontSize": 160,
+              "fontWeight": "900",
+              "letterSpacing": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "6wLEi",
+      "x": 0,
+      "y": 1662,
+      "name": "Screen 2 — Title Screen",
+      "width": 1920,
+      "height": 1080,
+      "fill": "#0073CF",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "6T3qB",
+          "x": 0,
+          "y": 0,
+          "name": "Court Geometry",
+          "width": 1920,
+          "height": 1080,
+          "fill": "transparent",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Ah5Y6",
+              "x": 120,
+              "y": 80,
+              "name": "Top Border",
+              "width": 1680,
+              "height": 3,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "zetc2",
+              "x": 120,
+              "y": 997,
+              "name": "Bottom Border",
+              "width": 1680,
+              "height": 3,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "dn2rG",
+              "x": 120,
+              "y": 80,
+              "name": "Left Border",
+              "width": 3,
+              "height": 920,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "OIlqE",
+              "x": 1797,
+              "y": 80,
+              "name": "Right Border",
+              "width": 3,
+              "height": 920,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "KxH1r",
+              "x": 958,
+              "y": 107,
+              "name": "Net Dash 1",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "DaGVK",
+              "x": 958,
+              "y": 260,
+              "name": "Net Dash 2",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "PiRIn",
+              "x": 958,
+              "y": 413,
+              "name": "Net Dash 3",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "spjcg",
+              "x": 958,
+              "y": 566,
+              "name": "Net Dash 4",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "PvH7Z",
+              "x": 958,
+              "y": 719,
+              "name": "Net Dash 5",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "IPs00",
+              "x": 958,
+              "y": 872,
+              "name": "Net Dash 6",
+              "width": 4,
+              "height": 100,
+              "fill": "#FFFFFF59",
+              "layout": "none"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YzzWc",
+          "x": 0,
+          "y": 0,
+          "name": "Center Wrapper",
+          "width": 1920,
+          "height": 1080,
+          "fill": "transparent",
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "WLp7C",
+              "name": "Title Stack",
+              "width": 1920,
+              "layout": "vertical",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "rOmlz",
+                  "name": "Game Title",
+                  "fill": "#FFFFFF",
+                  "content": "PONG PARRY",
+                  "textAlign": "center",
+                  "fontFamily": "Outfit",
+                  "fontSize": 140,
+                  "fontWeight": "900",
+                  "letterSpacing": 20
+                },
+                {
+                  "type": "text",
+                  "id": "uYqoy",
+                  "name": "Press Prompt",
+                  "fill": "#FFFFFF",
+                  "content": "PRESS ANY KEY",
+                  "textAlign": "center",
+                  "fontFamily": "Outfit",
+                  "fontSize": 32,
+                  "fontWeight": "500",
+                  "letterSpacing": 8
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "note",
+      "id": "GwAqE",
+      "x": 1960,
+      "y": 0,
+      "name": "Dev Note — Boot Splash Timing",
+      "width": 380,
+      "height": 220,
+      "content": "Boot/Splash Timing Reference\n\nFade in: 150–250ms\nHold: 800–1200ms\nFade out: 150–250ms\n\nAccessibility: No rapid flashing. High contrast only (white on black).\nSafe area: wordmark ≥5% margin from all edges.\nResolution base: 1920×1080 (16:9)"
+    }
+  ]
+}
