@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bcnrjhgwnurc5"]
 
 [ext_resource type="Script" uid="uid://dwhvtdp14tolt" path="res://scenes/boot_screen/boot_screen.gd" id="1_ehx6v"]
-[ext_resource type="Shader" uid="uid://byjlsq36n8ut8" path="res://scenes/title_screen/title_screen.gdshader" id="1_te6m6"]
+[ext_resource type="Shader" uid="uid://b04tdhku7b7yj" path="res://assets/shaders/grid_background.gdshader" id="1_te6m6"]
 [ext_resource type="FontFile" uid="uid://bj676rc6eexjs" path="res://assets/fonts/montserrat/Montserrat-BlackItalic.ttf" id="2_r14hs"]
 [ext_resource type="Texture2D" uid="uid://dc002nxu53cb2" path="res://assets/icons/hammer.svg" id="2_tuir3"]
+[ext_resource type="AudioStream" uid="uid://b0onqaij7cwhg" path="res://assets/sounds/boot_ping_pong.wav" id="5_ndd6f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r14hs"]
 shader = ExtResource("1_te6m6")
@@ -12,6 +13,7 @@ shader_parameter/line_color = Color(0.11764706, 0.18039216, 0.24313726, 1)
 shader_parameter/cell_size = 40.00000095
 shader_parameter/line_thickness = 1.0
 shader_parameter/scroll_speed = 0.0
+shader_parameter/vignette_intensity = 1.5
 
 [node name="BootScreen" type="Control" unique_id=999655460]
 layout_mode = 3
@@ -71,3 +73,6 @@ theme_override_fonts/font = ExtResource("2_r14hs")
 theme_override_font_sizes/font_size = 72
 text = "STUDIOS
 "
+
+[node name="BootSound" type="AudioStreamPlayer" parent="." unique_id=901754501]
+stream = ExtResource("5_ndd6f")

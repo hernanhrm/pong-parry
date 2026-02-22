@@ -1,11 +1,17 @@
 extends Control
 
 @onready var logo = $Logo
+@onready var boot_sound:AudioStreamPlayer = $BootSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	boot_sound.volume_db = -30.0
+	boot_sound.play()
+	var vol_tween := create_tween()
+	vol_tween.tween_property(boot_sound, "volume_db", 0.0, 1.5)
+	
 	_start_blink()
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	Transition.transition_to("res://scenes/title_screen/title_screen.tscn")
 
 
