@@ -5,6 +5,7 @@ extends Node2D
 
 @onready var hit_wall_sound: AudioStreamPlayer = $HitWall
 @onready var hit_sound_paddle: AudioStreamPlayer = $HitPaddle
+@onready var ball_destroyed_sound: AudioStreamPlayer = $BallDestroyed
 
 # HUD
 @onready var timer_value: Label = $HUDLayer/HUD/TopBar/TimerContainer/TimerValue
@@ -51,7 +52,7 @@ func _process(delta: float) -> void:
 		ball.move(delta, court_border.size.y, hit_wall_sound)
 		ball.check_paddle_hit(p1, 1.0, hit_sound_paddle)
 		ball.check_paddle_hit(p2, -1.0, hit_sound_paddle)
-		ball.check_scoring(p1, p2, court_border.size, STREAK_MULTIPLIER)
+		ball.check_scoring(p1, p2, court_border.size, STREAK_MULTIPLIER, ball_destroyed_sound)
 		_update_timer(delta)
 
 func _update_timer(delta: float) -> void:
