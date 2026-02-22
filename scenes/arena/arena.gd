@@ -23,9 +23,17 @@ extends Node2D
 @onready var p2_progress_bar = $HUDLayer/HUD/MarginContainer/P2HUD/P2OverdriveBar
 
 
+# Constants
+const COURT_PADDING: float = 10.0
+const GLOW_OFFSET: Vector2 = Vector2(8, 8)
+const BALL_SPEED_MULTIPLIER: float = 1.1
+const BALL_RESET_SPEED: float = 400.0
+const BALL_RESET_Y_RANGE: float = 250.0
+const STREAK_MULTIPLIER: int = 10
+
 # Game state
 var paddle_speed: float = 600.0
-var ball_velocity: Vector2 = Vector2(400, 250)
+var ball_velocity: Vector2 = Vector2(500, 350)
 
 var p1_score: int = 0
 var p1_streak: int = 0
@@ -61,12 +69,12 @@ func _move_paddles(delta: float) -> void:
 		right_paddle.position.y += paddle_speed * delta
 
 	# Clamp paddles to court bounds
-	left_paddle.position.y = clamp(left_paddle.position.y, 10, court_border.size.y-10 - left_paddle.size.y)
-	right_paddle.position.y = clamp(right_paddle.position.y, 10, court_border.size.y-10 - right_paddle.size.y)
+	left_paddle.position.y = clamp(left_paddle.position.y, COURT_PADDING, court_border.size.y - COURT_PADDING - left_paddle.size.y)
+	right_paddle.position.y = clamp(right_paddle.position.y, COURT_PADDING, court_border.size.y - COURT_PADDING - right_paddle.size.y)
 
 	# Update glow positions 
-	left_paddle_glow.position = left_paddle.position - Vector2(8, 8)
-	right_paddle_glow.position = right_paddle.position - Vector2(8, 8)
+	left_paddle_glow.position = left_paddle.position - GLOW_OFFSET
+	right_paddle_glow.position = right_paddle.position - GLOW_OFFSET
 
 func _move_ball(delta: float) -> void:
 	ball.position += ball_velocity * delta
@@ -84,12 +92,12 @@ func _move_ball(delta: float) -> void:
 	if ball_rect.intersects(left_rect) and ball_velocity.x < 0:
 		hit_sound_paddle.play()
 		ball_velocity.x = -ball_velocity.x
-		ball_velocity *= 1.1  # Speed up slightly each hit
+		ball_velocity *= BALL_SPEED_MULTIPLIER
 
 	if ball_rect.intersects(right_rect) and ball_velocity.x > 0:
 		hit_sound_paddle.play()
 		ball_velocity.x = -ball_velocity.x
-		ball_velocity *= 1.1
+		ball_velocity *= BALL_SPEED_MULTIPLIER
 
 	# Scoring — ball goes past left or right edge
 	if ball.position.x + ball.size.x < 0:
@@ -104,7 +112,7 @@ func _score(player: int) -> void:
 
 		p2_streak = 0
 		p1_streak += 1
-		p1_progress_bar.value +=  p1_streak * 10
+		p1_progress_bar.value += p1_streak * STREAK_MULTIPLIER
 
 	else:
 		p2_score += 1
@@ -112,14 +120,14 @@ func _score(player: int) -> void:
 
 		p2_streak += 1
 		p1_streak = 0
-		p2_progress_bar.value += p2_streak * 10
+		p2_progress_bar.value += p2_streak * STREAK_MULTIPLIER
 	_reset_ball()
 
 func _reset_ball() -> void:
 	ball.position = court_border.size / 2.0 - ball.size / 2.0
 	# Alternate serve direction, add some randomness
 	var direction := -1.0 if ball_velocity.x > 0 else 1.0
-	ball_velocity = Vector2(400 * direction, randf_range(-250, 250))
+	ball_velocity = Vector2(BALL_RESET_SPEED * direction, randf_range(-BALL_RESET_Y_RANGE, BALL_RESET_Y_RANGE))
 
 func _update_timer(delta: float) -> void:
 	match_time -= delta
