@@ -11,6 +11,9 @@ extends Node2D
 @onready var ball: ColorRect = $Court/Ball
 @onready var court_border: Control = $Court/CourtBorder
 
+@onready var hit_wall_sound: AudioStreamPlayer = $HitWall
+@onready var hit_sound_paddle: AudioStreamPlayer = $HitPaddle
+
 # HUD elements (note: path goes through HUDLayer → HUD)
 @onready var p1_score_label: Label = $HUDLayer/HUD/TopBar/P1ScoreBox/P1ScoreLabel
 @onready var p2_score_label: Label = $HUDLayer/HUD/TopBar/P2ScoreBox/P2ScoreLabel
@@ -26,7 +29,7 @@ var is_timer_finished: bool = false
 
 func _ready() -> void:
 	var tween := create_tween()
-	tween.tween_property(MusicManager.bg_music, "volume_db", -30.0, 1.0)
+	tween.tween_property(MusicManager.bg_music, "volume_db", -20.0, 2.0)
 
 
 func _process(delta: float) -> void:
@@ -62,6 +65,7 @@ func _move_ball(delta: float) -> void:
 	# Bounce off top and bottom walls
 	if ball.position.y <= 0 or ball.position.y + ball.size.y >= court_border.size.y:
 		ball_velocity.y = -ball_velocity.y
+		hit_wall_sound.play()
 
 	# Check paddle collisions
 	var ball_rect := Rect2(ball.position, ball.size)
@@ -71,10 +75,12 @@ func _move_ball(delta: float) -> void:
 	if ball_rect.intersects(left_rect) and ball_velocity.x < 0:
 		ball_velocity.x = -ball_velocity.x
 		ball_velocity *= 1.1  # Speed up slightly each hit
+		hit_sound_paddle.play()
 
 	if ball_rect.intersects(right_rect) and ball_velocity.x > 0:
 		ball_velocity.x = -ball_velocity.x
 		ball_velocity *= 1.1
+		hit_sound_paddle.play()
 
 	# Scoring — ball goes past left or right edge
 	if ball.position.x + ball.size.x < 0:
