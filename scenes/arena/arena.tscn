@@ -1,0 +1,315 @@
+[gd_scene format=3 uid="uid://dnjt4glopu567"]
+
+[ext_resource type="Shader" uid="uid://b04tdhku7b7yj" path="res://assets/shaders/grid_background.gdshader" id="1_1qjuf"]
+[ext_resource type="Script" uid="uid://bdk6bijskjch" path="res://scenes/arena/court_border.gd" id="2_8trdl"]
+[ext_resource type="Script" uid="uid://bs8kd6clft1r4" path="res://scenes/arena/court_lines.gd" id="3_5tue2"]
+[ext_resource type="Script" uid="uid://bjs3w37jylue7" path="res://scenes/arena/ball.gd" id="4_aj7ud"]
+[ext_resource type="FontFile" uid="uid://bj676rc6eexjs" path="res://assets/fonts/montserrat/Montserrat-BlackItalic.ttf" id="5_asdgj"]
+[ext_resource type="FontFile" uid="uid://b5nvmwnh5krgk" path="res://assets/fonts/montserrat/Montserrat-Black.ttf" id="6_jx0ua"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8trdl"]
+shader = ExtResource("1_1qjuf")
+shader_parameter/bg_color = Color(0.1, 0.137, 0.196, 1)
+shader_parameter/line_color = Color(0.101960786, 0.13333334, 0.17254902, 1)
+shader_parameter/cell_size = 40.00000095
+shader_parameter/line_thickness = 1.0
+shader_parameter/scroll_speed = 0.0
+shader_parameter/vignette_intensity = 1.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aj7ud"]
+content_margin_left = 24.0
+content_margin_top = 8.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0.8235294, 1, 1)
+skew = Vector2(0.15, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx0ua"]
+content_margin_left = 24.0
+content_margin_top = 8.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(-0.15, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ii07k"]
+bg_color = Color(0.101960786, 0.13333334, 0.17254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u52cf"]
+bg_color = Color(0, 0.8235294, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6w4xk"]
+bg_color = Color(0.101960786, 0.13333334, 0.17254902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.1764706, 0.21568628, 0.28235295, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ml6w"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Arena" type="Node2D" unique_id=1567707666]
+
+[node name="Background" type="ColorRect" parent="." unique_id=1675532086]
+material = SubResource("ShaderMaterial_8trdl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.05490196, 0.078431375, 1)
+
+[node name="Court" type="Node2D" parent="." unique_id=789287072]
+position = Vector2(80, 90)
+
+[node name="CourtBorder" type="Control" parent="Court" unique_id=1730623727]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1760.0
+offset_bottom = 850.0
+script = ExtResource("2_8trdl")
+
+[node name="CourtLines" type="Control" parent="Court" unique_id=85853835]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1760.0
+offset_bottom = 850.0
+script = ExtResource("3_5tue2")
+
+[node name="LeftPaddle" type="ColorRect" parent="Court" unique_id=477866402]
+custom_minimum_size = Vector2(16, 120)
+offset_left = 40.0
+offset_top = 340.0
+offset_right = 56.0
+offset_bottom = 460.0
+color = Color(0, 0.8235294, 1, 1)
+
+[node name="RightPaddle" type="ColorRect" parent="Court" unique_id=894133306]
+custom_minimum_size = Vector2(16, 120)
+offset_left = 1704.0
+offset_top = 340.0
+offset_right = 1720.0
+offset_bottom = 460.0
+
+[node name="Ball" type="ColorRect" parent="Court" unique_id=991810256]
+custom_minimum_size = Vector2(20, 20)
+offset_left = 605.0
+offset_top = 287.0
+offset_right = 625.0
+offset_bottom = 307.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_aj7ud")
+
+[node name="HUDLayer" type="CanvasLayer" parent="." unique_id=1836794191]
+
+[node name="HUD" type="Control" parent="HUDLayer" unique_id=1575432712]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="HBoxContainer" parent="HUDLayer/HUD" unique_id=666126297]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="P1ScoreBox" type="PanelContainer" parent="HUDLayer/HUD/TopBar" unique_id=1140629610]
+custom_minimum_size = Vector2(120, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aj7ud")
+
+[node name="P1ScoreLabel" type="Label" parent="HUDLayer/HUD/TopBar/P1ScoreBox" unique_id=2098500114]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_asdgj")
+theme_override_font_sizes/font_size = 48
+text = "01"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerContainer" type="VBoxContainer" parent="HUDLayer/HUD/TopBar" unique_id=67349214]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TimeRemainingLabel" type="Label" parent="HUDLayer/HUD/TopBar/TimerContainer" unique_id=1322093589]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.68235296, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("6_jx0ua")
+theme_override_font_sizes/font_size = 12
+text = "TIME REMAINING"
+horizontal_alignment = 1
+
+[node name="TimerValue" type="Label" parent="HUDLayer/HUD/TopBar/TimerContainer" unique_id=332603157]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_asdgj")
+theme_override_font_sizes/font_size = 40
+text = "2:45"
+horizontal_alignment = 1
+
+[node name="P2ScoreBox" type="PanelContainer" parent="HUDLayer/HUD/TopBar" unique_id=646846420]
+custom_minimum_size = Vector2(120, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jx0ua")
+
+[node name="P2ScoreLabel" type="Label" parent="HUDLayer/HUD/TopBar/P2ScoreBox" unique_id=430107338]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_asdgj")
+theme_override_font_sizes/font_size = 48
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HUDLayer/HUD" unique_id=1926466826]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -106.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 76
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 76
+theme_override_constants/margin_bottom = 16
+
+[node name="P1HUD" type="VBoxContainer" parent="HUDLayer/HUD/MarginContainer" unique_id=462448051]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 8
+
+[node name="P1Label" type="Label" parent="HUDLayer/HUD/MarginContainer/P1HUD" unique_id=649932980]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.8235294, 1, 1)
+theme_override_fonts/font = ExtResource("6_jx0ua")
+theme_override_font_sizes/font_size = 14
+text = "P1 • OVERDRIVE"
+
+[node name="P1OverdriveBar" type="ProgressBar" parent="HUDLayer/HUD/MarginContainer/P1HUD" unique_id=985024469]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ii07k")
+theme_override_styles/fill = SubResource("StyleBoxFlat_u52cf")
+value = 65.0
+show_percentage = false
+
+[node name="P1Abilities" type="HBoxContainer" parent="HUDLayer/HUD/MarginContainer/P1HUD" unique_id=542929527]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="AbilitySlot1" type="PanelContainer" parent="HUDLayer/HUD/MarginContainer/P1HUD/P1Abilities" unique_id=906740427]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_6w4xk")
+
+[node name="Label" type="Label" parent="HUDLayer/HUD/MarginContainer/P1HUD/P1Abilities/AbilitySlot1" unique_id=1604935781]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.68235296, 0.7529412, 1)
+theme_override_font_sizes/font_size = 12
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AbilitySlot2" type="PanelContainer" parent="HUDLayer/HUD/MarginContainer/P1HUD/P1Abilities" unique_id=916009797]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_6w4xk")
+
+[node name="Label" type="Label" parent="HUDLayer/HUD/MarginContainer/P1HUD/P1Abilities/AbilitySlot2" unique_id=1700140202]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.68235296, 0.7529412, 1)
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ExitContainer" type="HBoxContainer" parent="HUDLayer/HUD/MarginContainer" unique_id=673746767]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+
+[node name="TitleLable" type="Label" parent="HUDLayer/HUD/MarginContainer/ExitContainer" unique_id=201226954]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_jx0ua")
+theme_override_font_sizes/font_size = 12
+text = "ESC"
+
+[node name="DescriptionLabel" type="Label" parent="HUDLayer/HUD/MarginContainer/ExitContainer" unique_id=1593412439]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.68235296, 0.7529412, 1)
+theme_override_fonts/font = ExtResource("6_jx0ua")
+theme_override_font_sizes/font_size = 12
+text = "TO QUIT THE MATCH"
+
+[node name="P2HUD" type="VBoxContainer" parent="HUDLayer/HUD/MarginContainer" unique_id=733041077]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 8
+
+[node name="P2Label" type="Label" parent="HUDLayer/HUD/MarginContainer/P2HUD" unique_id=2068659396]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_jx0ua")
+theme_override_font_sizes/font_size = 14
+text = "P2 • OVERDRIVE"
+
+[node name="P2OverdriveBar" type="ProgressBar" parent="HUDLayer/HUD/MarginContainer/P2HUD" unique_id=1180892764]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ii07k")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2ml6w")
+value = 65.0
+show_percentage = false
+
+[node name="P1Abilities" type="HBoxContainer" parent="HUDLayer/HUD/MarginContainer/P2HUD" unique_id=1229144269]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="AbilitySlot1" type="PanelContainer" parent="HUDLayer/HUD/MarginContainer/P2HUD/P1Abilities" unique_id=527190111]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_6w4xk")
+
+[node name="Label" type="Label" parent="HUDLayer/HUD/MarginContainer/P2HUD/P1Abilities/AbilitySlot1" unique_id=245720352]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.68235296, 0.7529412, 1)
+theme_override_font_sizes/font_size = 12
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AbilitySlot2" type="PanelContainer" parent="HUDLayer/HUD/MarginContainer/P2HUD/P1Abilities" unique_id=85995978]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_6w4xk")
+
+[node name="Label" type="Label" parent="HUDLayer/HUD/MarginContainer/P2HUD/P1Abilities/AbilitySlot2" unique_id=1082518474]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.627451, 0.68235296, 0.7529412, 1)
+theme_override_font_sizes/font_size = 12
+text = "K"
+horizontal_alignment = 1
+vertical_alignment = 2
