@@ -2,9 +2,9 @@
 
 [ext_resource type="Shader" uid="uid://b04tdhku7b7yj" path="res://assets/shaders/grid_background.gdshader" id="1_1qjuf"]
 [ext_resource type="Script" uid="uid://btef3ixlsmpm" path="res://scenes/arena/arena.gd" id="1_u52cf"]
-[ext_resource type="Script" uid="uid://bdk6bijskjch" path="res://scenes/arena/court_border.gd" id="2_8trdl"]
-[ext_resource type="Script" uid="uid://bs8kd6clft1r4" path="res://scenes/arena/court_lines.gd" id="3_5tue2"]
-[ext_resource type="Script" uid="uid://bjs3w37jylue7" path="res://scenes/arena/ball.gd" id="4_aj7ud"]
+[ext_resource type="Script" uid="uid://bdk6bijskjch" path="res://scenes/arena/court/court_border.gd" id="2_8trdl"]
+[ext_resource type="Script" uid="uid://bs8kd6clft1r4" path="res://scenes/arena/court/court_lines.gd" id="3_5tue2"]
+[ext_resource type="Script" uid="uid://bjs3w37jylue7" path="res://scenes/arena/ball/ball.gd" id="4_aj7ud"]
 [ext_resource type="FontFile" uid="uid://bj676rc6eexjs" path="res://assets/fonts/montserrat/Montserrat-BlackItalic.ttf" id="5_asdgj"]
 [ext_resource type="FontFile" uid="uid://b5nvmwnh5krgk" path="res://assets/fonts/montserrat/Montserrat-Black.ttf" id="6_jx0ua"]
 [ext_resource type="AudioStream" uid="uid://c5wfcgn0ou73v" path="res://assets/sounds/hit.mp3" id="8_ii07k"]
